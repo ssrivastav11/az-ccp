@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AZ Campus Connection Program | Agozenith</title>
+    <meta name="description" content="AZ Campus Connection Program (AZ CCP) — empowering student leaders with mentorship, events, and career opportunities. Apply to lead your campus chapter.">
+    <meta name="keywords" content="Campus Ambassador, AZ CCP, Agozenith, Student Leadership, Campus Chapter">
+    <meta property="og:title" content="AZ Campus Connection Program">
+    <meta property="og:description" content="Become an AZ Chapter Lead — run workshops, build community, get mentorship and exclusive perks.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --brand-blue: #0052cc;
+            --brand-gold: #ffd700;
+            --brand-black: #0a0a0a;
+            --glass: rgba(10, 10, 10, 0.6);
+        }
+        html { scroll-behavior: smooth }
+        body { font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial; background: var(--brand-black); color: #fff }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0 }
+        .glass { background: var(--glass); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255, 215, 0, 0.12) }
+        .card-shine { transition: transform .28s ease, box-shadow .28s ease }
+        .card-shine:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0, 82, 204, 0.14), 0 0 24px rgba(255, 215, 0, 0.14) }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .modal-enter { animation: fadeIn .18s ease-out both }
+        .hero-title { line-height: 0.95 }
+        /* Hiding scrollbar for aesthetics */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        /* Custom scrollbar for FAQ */
+        #faq-scroll::-webkit-scrollbar { width: 8px; }
+        #faq-scroll::-webkit-scrollbar-track { background: #1f2937; border-radius: 10px; }
+        #faq-scroll::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 10px; }
+        #faq-scroll::-webkit-scrollbar-thumb:hover { background: #6b7280; }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="fixed inset-x-0 top-0 z-40 glass">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="flex items-center gap-3">
+                        <img src="images/BLUE AZ LOGO.png" alt="Agozenith Program Logo" class="w-14 h-14">
+                        <span class="sr-only">AlgoZenith Campus Connection Program</span>
+                    </a>
+                </div>
+                <nav class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-3 bg-gray-900/60 border border-gray-800 rounded-full px-3 py-2">
+                    <a href="#benefits" class="px-4 py-2 text-sm text-gray-200 hover:text-yellow-400">Benefits</a>
+                    <a href="#peek" class="px-4 py-2 text-sm text-gray-200 hover:text-yellow-400">Sneak Peek</a>
+                    <a href="#mission" class="px-4 py-2 text-sm text-gray-200 hover:text-yellow-400">Mission</a>
+                    <a href="#testimonials" class="px-4 py-2 text-sm text-gray-200 hover:text-yellow-400">Testimonials</a>
+                    <a href="#faq" class="px-4 py-2 text-sm text-gray-200 hover:text-yellow-400">FAQs</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <a id="applyBtnTop" href="https://forms.gle/HpedZoLqd7puN1hPA" target="_blank" class="inline-flex items-center gap-2 bg-yellow-400 text-black font-semibold py-2 px-4 rounded-full hover:shadow-lg transition transform hover:scale-[1.03]">Apply Now</a>
+                    <a href="https://maang.in" target="_blank" class="hidden sm:inline-flex items-center gap-2 border-2 border-yellow-400 text-yellow-400 font-semibold py-2 px-4 rounded-full hover:bg-yellow-400 hover:text-black transition">About AZ</a>
+                    <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded-full border border-gray-700">
+                        <span class="sr-only">Open menu</span>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-900/80 border-t border-gray-800">
+            <div class="container mx-auto px-4 py-4 flex flex-col gap-2">
+                <a href="#benefits" class="text-gray-200">Benefits</a>
+                <a href="#peek" class="text-gray-200">Sneak Peek</a>
+                <a href="#mission" class="text-gray-200">Mission</a>
+                <a href="#testimonials" class="text-gray-200">Testimonials</a>
+                <a href="#faq" class="text-gray-200">FAQs</a>
+            </div>
+        </div>
+    </header>
+    <main class="pt-24">
+        <section id="home" class="min-h-[72vh] lg:min-h-screen flex items-center">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <div class="text-center lg:text-left">
+                        <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-extrabold text-white"> <span class="text-yellow-400">AlgoZenith</span> Campus <span class="block">Connection Program</span></h1>
+                        <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-2xl">Building a nationwide strong community of students who learn, grow, and become future-ready together.</p>
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                            <a href="https://forms.gle/HpedZoLqd7puN1hPA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-yellow-400 text-black font-bold py-3 px-6 rounded-full text-lg hover:shadow-xl transition">Apply to Lead</a>
+                            <a href="#benefits" class="inline-flex items-center gap-2 border-2 border-blue-500 text-blue-400 font-semibold py-3 px-6 rounded-full hover:bg-blue-500 hover:text-white transition">Learn More</a>
+                        </div>
+                        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-md">
+                            <div class="bg-gray-900/50 rounded-xl p-4 text-center">
+                                <div class="text-2xl font-bold text-white">80+</div>
+                                <div class="text-sm text-gray-300">Colleges</div>
+                            </div>
+                            <div class="bg-gray-900/50 rounded-xl p-4 text-center">
+                                <div class="text-2xl font-bold text-white">750+</div>
+                                <div class="text-sm text-gray-300">Events</div>
+                            </div>
+                            <div class="bg-gray-900/50 rounded-xl p-4 text-center">
+                                <div class="text-2xl font-bold text-white">5000+</div>
+                                <div class="text-sm text-gray-300">Alumni</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-first lg:order-last">
+                        <div class="rounded-2xl overflow-hidden border border-gray-800 bg-gradient-to-br from-gray-900/60 to-gray-900 p-4">
+                            <img src="images/AZ-team.jpeg" alt="AZ CCP event" loading="lazy" class="w-full h-[320px] object-cover rounded-xl">
+                            <div class="mt-4 grid grid-cols-2 gap-3">
+                                <img src="images/workshop_home.jpg" alt="workshop" loading="lazy" class="w-full h-36 object-cover object-top rounded-xl">
+                                <img src="images/lead-home.png" alt="leaders" loading="lazy" class="w-full h-36 object-cover object-top rounded-xl">
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center lg:text-right">
+                            <a href="mailto:campusconnect@algozenit.com" class="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold py-2 px-4 rounded-full">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-yellow-400">Why Become a Chapter Lead?</h2>
+                    <p class="mt-2 text-gray-300 max-w-2xl mx-auto"></p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <article class="card-shine bg-gray-900 p-6 rounded-2xl border border-gray-800 text-center">
+                        <div class="w-16 h-16 mx-auto mb-3 flex items-center justify-center" aria-hidden="true">
+                            <i class="fa-solid fa-users text-5xl text-yellow-400"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl">Leadership & Networking</h3>
+                        <p class="mt-2 text-gray-300">Refine your leadership  skills, and build lasting connections with fellow leads, mentors, and industry professionals from across India.</p>
+                    </article>
+                    
+                    <article class="card-shine bg-gray-900 p-6 rounded-2xl border border-gray-800 text-center">
+                        <div class="w-16 h-16 mx-auto mb-3 flex items-center justify-center" aria-hidden="true">
+                            <i class="fa-solid fa-gift text-5xl text-yellow-400"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl">Exclusive Swag & Merch</h3>
+                        <p class="mt-2 text-gray-300">Get rewarded for your efforts with premium AZ merchandise, event goodies, and exclusive learning resources</p>
+                    </article>
+                    
+                    <article class="card-shine bg-gray-900 p-6 rounded-2xl border border-gray-800 text-center">
+                        <div class="w-16 h-16 mx-auto mb-3 flex items-center justify-center" aria-hidden="true">
+                            <i class="fa-solid fa-award text-5xl text-yellow-400"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl">Certificate of recognition</h3>
+                        <p class="mt-2 text-gray-300">Earn an official certificate from AlgoZenith recognizing your  efforts — a powerful addition to your professional portfolio and resume.</p>
+                    </article>
+                    
+                    <article class="card-shine bg-gray-900 p-6 rounded-2xl border border-gray-800 text-center">
+                        <div class="w-16 h-16 mx-auto mb-3 flex items-center justify-center" aria-hidden="true">
+                            <i class="fa-solid fa-comments text-5xl text-yellow-400"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl">1:1 Mentorship & Industry Exposure</h3>
+                        <p class="mt-2 text-gray-300">Get a unique opportunity to connect directly with AlgoZenith’s core team and alumni mentors. Gain personalized guidance & learn from real industry experts</p>
+                    </article>
+                    
+                    <article class="card-shine bg-gray-900 p-6 rounded-2xl border border-gray-800 text-center">
+                        <div class="w-16 h-16 mx-auto mb-3 flex items-center justify-center" aria-hidden="true">
+                            <i class="fa-solid fa-arrow-trend-up text-5xl text-yellow-400"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl">Skill Development</h3>
+                        <p class="mt-2 text-gray-300">Boost your leadership, communication, and technical skills through real-world experiences and hands-on community building.</p>
+                    </article>
+                    
+                    <article class="card-shine bg-gray-900 p-6 rounded-2xl border border-gray-800 text-center">
+                        <div class="w-16 h-16 mx-auto mb-3 flex items-center justify-center" aria-hidden="true">
+                            <i class="fa-solid fa-briefcase text-5xl text-yellow-400"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl">Referrals & Internship Opportunities</h3>
+                        <p class="mt-2 text-gray-300">Top-performing leads stand a chance to earn exclusive referrals and internship opportunities with AlgoZenith</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+        <section id="peek" class="py-16 bg-gray-900/40">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-yellow-400">Take a Sneak Peek</h2>
+                    <p class="text-gray-300 mt-2">See our community in action.</p>
+                </div>
+                <div class="relative">
+                    <div id="peek-scroll" class="hide-scrollbar flex gap-4 overflow-x-auto py-4 snap-x snap-mandatory">
+                        <figure class="snap-center flex-shrink-0 w-3/4 sm:w-1/3 md:w-1/4 bg-gray-900 rounded-lg overflow-hidden">
+                            <img src="images/ideathon.jpg" alt="event vibes" loading="lazy" class="w-full h-48 object-cover">
+                            <figcaption class="p-2 text-xs text-center text-gray-300">Ideathon</figcaption>
+                        </figure>
+                        <figure class="snap-center flex-shrink-0 w-3/4 sm:w-1/3 md:w-1/4 bg-gray-900 rounded-lg overflow-hidden">
+                            <img src="images/DSA-session.jpeg" alt="leaders" loading="lazy" class="w-full h-48 object-cover">
+                            <figcaption class="p-2 text-xs text-center text-gray-300">Session on Resume and Networking</figcaption>
+                        </figure>
+                        <figure class="snap-center flex-shrink-0 w-3/4 sm:w-1/3 md:w-1/4 bg-gray-900 rounded-lg overflow-hidden">
+                            <img src="images/IIT-Kanpur-COmmunity.jpg" alt="Community event" loading="lazy" class="w-full h-48 object-cover">
+                            <figcaption class="p-2 text-xs text-center text-gray-300">IIT Kanpur Chapter</figcaption>
+                        </figure>
+                        <figure class="snap-center flex-shrink-0 w-3/4 sm:w-1/3 md:w-1/4 bg-gray-900 rounded-lg overflow-hidden">
+                            <img src="images/workshop.jpg" alt="workshop" loading="lazy" class="w-full h-48 object-cover">
+                            <figcaption class="p-2 text-xs text-center text-gray-300">Introduction to programming and DSA</figcaption>
+                        </figure>
+                        <figure class="snap-center flex-shrink-0 w-3/4 sm:w-1/3 md:w-1/4 bg-gray-900 rounded-lg overflow-hidden">
+                            <img src="images/CP-contest.jpeg" alt="hackathon" loading="lazy" class="w-full h-48 object-cover">
+                            <figcaption class="p-2 text-xs text-center text-gray-300">Competitive programming Contest</figcaption>
+                        </figure>
+                        
+                    </div>
+                    <button id="scrollLeftBtn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white hover:bg-black transition z-10">
+                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                    </button>
+                    <button id="scrollRightBtn" class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white hover:bg-black transition z-10">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                    </button>
+                </div>
+                <div class="mt-8 text-center">
+                    <p class="text-gray-300 max-w-3xl mx-auto">Our chapters are spreading in IIT Goa, NIT Calicut, IIIT Gwalior, MIT Manipal, BITS Patna, KIIT Bhubhneshwar, VIIT Vishakhapatnam, and many more.</p>
+                </div>
+            </div>
+        </section>
+        <section id="mission" class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-yellow-400">Our Mission</h2>
+                        <p class="mt-4 text-gray-300">AlgoZenith Campus Connection Program is an Agozenith initiative to bridge the gap between academic learning and industry demands. We empower students with resources, mentorship, and a platform to lead change on their campuses, and create a meaningful impact among the student community.</p>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800">
+                        <h3 class="text-xl font-semibold text-white text-center mb-4">Application Process</h3>
+                         <ol class="relative border-l-2 border-blue-500 space-y-8 ml-3">
+                            <li class="pl-8 relative">
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-blue-500 rounded-full border-2 border-gray-900"></div>
+                                <strong class="block text-white">Application Review</strong>
+                                <span class="text-gray-300">We review your application to assess leadership potential and program fit.</span>
+                            </li>
+                            <li class="pl-8 relative">
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-blue-500 rounded-full border-2 border-gray-900"></div>
+                                <strong class="block text-white">Phone Interaction</strong>
+                                <span class="text-gray-300">Shortlisted candidates get a quick call to discuss motivation and interest.</span>
+                            </li>
+                            <li class="pl-8 relative">
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-blue-500 rounded-full border-2 border-gray-900"></div>
+                                <strong class="block text-white">1:1 Video Interview & Onboarding</strong>
+                                <span class="text-gray-300">Finalists attend a 20–25 min interview, and selected leads are onboarded into AZ CCP.</span>
+                            </li>
+                        </ol>
+                        <div class="mt-6 flex items-center justify-center gap-4">
+                            <button id="rolesBtn" class="text-sm text-blue-400 underline">Roles & Responsibilities</button>
+                            <button id="eligibilityBtn" class="text-sm text-blue-400 underline">Eligibility Criteria</button>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <a href="https://forms.gle/HpedZoLqd7puN1hPA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold py-3 px-6 rounded-full">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials" class="py-16 bg-gray-900/40">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-yellow-400">Words from Our Leaders</h2>
+                    <p class="text-gray-300 mt-2">Hear what past chapter leads have to say.</p>
+                </div>
+                <div class="relative">
+                    <div id="testimonial-scroll" class="hide-scrollbar flex gap-6 overflow-x-auto py-4 snap-x snap-mandatory">
+                        
+                        <blockquote class="snap-start flex-shrink-0 w-11/12 sm:w-1/2 lg:w-1/3 bg-brand-black p-6 rounded-2xl border border-gray-800">
+                            <p class="text-gray-300 mb-4">"Being the AlgoZenith Chapter Lead was a wonderful experience!! It honed my leadership and technical skills. The support from the AZ team was incredible and it felt great to be part of a community that genuinely empowers coders. This journey boosted my confidence and connected me with like minded peers across campuses."</p>
+                            <footer class="flex items-center gap-3">
+                                <img class="w-12 h-12  rounded-full  object-cover object-top" src="images/Shiwangi-testimonial.png" alt="Shiwangi-IIIT">
+                                <div><div class="font-semibold">Shiwangi Singh</div><div class="text-sm text-blue-400">IIIT Bhagalpur</div></div>
+                            </footer>
+                        </blockquote>
+        
+                        <blockquote class="snap-start flex-shrink-0 w-11/12 sm:w-1/2 lg:w-1/3 bg-brand-black p-6 rounded-2xl border border-gray-800">
+                            <p class="text-gray-300 mb-4">"From dreaming of hosting events to actually making them happen, AZ turned aspirations into reality. It taught me leadership, boosted my confidence, and proved that I can achieve anything I set my mind to. So much love for this experience—I'll truly miss the thrill of hosting, the hustle of securing permissions"</p>
+                            <footer class="flex items-center gap-3">
+                                <img class="w-12 h-12  rounded-full" src="images/Nehal-testimonial1.png" alt="Nehal-VIIT">
+                                <div><div class="font-semibold">Nehal Fatema</div><div class="text-sm text-blue-400">Vignan's Institute of Information Technology</div></div>
+                            </footer>
+                        </blockquote>
+        
+                        <blockquote class="snap-start flex-shrink-0 w-11/12 sm:w-1/2 lg:w-1/3 bg-brand-black p-6 rounded-2xl border border-gray-800">
+                            <p class="text-gray-300 mb-4">"Being a lead at AZ CCP was a experience like none other. I was able to enhance myself in multiple domains such as Leadership as I was able to build and lead an entire team of talented people,  and Yes How can I forget the awesome memories and connection established with other AZ Leads. I am truly thankful to the AZ team"</p>
+                            <footer class="flex items-center gap-3">
+                                <img class="w-12 h-12  rounded-full" src="images/Kabir-testimonial.png" alt="Kabir-GEC">
+                                <div><div class="font-semibold">Kabir Dafda</div><div class="text-sm text-blue-400">Government Engineering College, Patan</div></div>
+                            </footer>
+                        </blockquote>
+
+                        <blockquote class="snap-start flex-shrink-0 w-11/12 sm:w-1/2 lg:w-1/3 bg-brand-black p-6 rounded-2xl border border-gray-800">
+                            <p class="text-gray-300 mb-4">"A FUN-TASTIC opportunity to Lead and reignite the lost atmosphere of coding culture in our college grounds.From ideation to execution, the entire experience was incredibly fulfilling.A huge shoutout the AlgoZenith team for their unwavering support and trust. Their efforts made this journey a grand success."</p>
+                            <footer class="flex items-center gap-3">
+                                <img class="w-12 h-12 rounded-full" src="images/Ashutosh-testimonial.png" alt="Ashutosh-srmcem">
+                                <div><div class="font-semibold">Ashutosh Singh</div><div class="text-sm text-blue-400">SRMCEM, Lucknow</div></div>
+                            </footer>
+                        </blockquote>
+        
+                    </div>
+                    <button id="testimonialScrollLeftBtn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white hover:bg-black transition z-10 hidden sm:block">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                   </button>
+                   <button id="testimonialScrollRightBtn" class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white hover:bg-black transition z-10 hidden sm:block">
+                       <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                   </button>
+                </div>
+            </div>
+        </section>
+        <section id="map-section" class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-yellow-400">Join Our Growing Community</h2>
+                <p class="mt-2 text-gray-300 max-w-2xl mx-auto">AZ is propelling nationwide impact, powered by a thriving community engaged in everything from virtual workshops to in-person hackathons. The movement is happening; don't wait to join in.</p>
+                <div class="mt-8 mx-auto max-w-sm">
+                    <img src="images/mapindia-3.jpg" alt="AZ CCP Community Event" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+                <div class="mt-8 flex items-center justify-center gap-4">
+                    <a href="https://forms.gle/HpedZoLqd7puN1hPA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-yellow-400 text-black font-bold py-3 px-6 rounded-full">Apply Now & Lead</a>
+                    <a href="mailto:campusconnect@algozenit.com" class="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold py-3 px-6 rounded-full">Contact Us</a>
+                </div>
+            </div>
+        </section>
+        <section id="faq" class="py-16 bg-gray-900/40">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-yellow-400">Frequently Asked Questions</h2>
+                </div>
+                <div id="faq-scroll" class="max-h-[450px] overflow-y-auto space-y-4 pr-2">
+                    <details class="group bg-gray-900 rounded-lg p-6">
+                        <summary class="flex justify-between items-center font-semibold text-white text-lg cursor-pointer">
+                            <span>What is the AZ Campus Connection Program?</span>
+                            <svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                        </summary>
+                        <p class="text-gray-300 mt-3">AZ CCP is a student leadership initiative by AlgoZenith that empowers students to establish and lead campus chapters, organize a wide variety of events, and foster a collaborative learning community with full institutional support.</p>
+                    </details>
+                    <details class="group bg-gray-900 rounded-lg p-6">
+                        <summary class="flex justify-between items-center font-semibold text-white text-lg cursor-pointer">
+                           <span>Who is eligible to apply?</span>
+                           <svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                        </summary>
+                        <p class="text-gray-300 mt-3">Applicants must be full-time UG/PG students enrolled in a recognized institution in India (pursuing BTech, MTech, BCA, or MCA, including integrated programs). First-year and final-year students are NOT eligible.</p>
+                    </details>
+                    <details class="group bg-gray-900 rounded-lg p-6">
+                        <summary class="flex justify-between items-center font-semibold text-white text-lg cursor-pointer">
+                           <span>Is this a paid position?</span>
+                           <svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                        </summary>
+                        <p class="text-gray-300 mt-3">o, it is a voluntary leadership role. However, it offers significant non-monetary benefits such as exclusive perks, professional networking, and career opportunities.</p>
+                    </details>
+                    <details class="group bg-gray-900 rounded-lg p-6">
+                        <summary class="flex justify-between items-center font-semibold text-white text-lg cursor-pointer">
+                           <span>What is the time commitment?</span>
+                           <svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                        </summary>
+                        <p class="text-gray-300 mt-3">The commitment is flexible but driven by your activity. This is a functional role, and your weekly hours will vary based on where you are in the event planning cycle. This typically involves 2-3 hours per week for planning, promotion, team coordination, and event execution, ensuring a continuous impact on your campus community.</p>
+                    </details>
+                     <details class="group bg-gray-900 rounded-lg p-6">
+                        <summary class="flex justify-between items-center font-semibold text-white text-lg cursor-pointer">
+                           <span>What kind of events do chapters organize?</span>
+                           <svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                        </summary>
+                        <p class="text-gray-300 mt-3">ur chapters host diverse events to provide students with a complete placement readiness experience. This covers workshops and seminars for skill development, coding contests, web development and sessions on crucial career aspects like resume building, interview preparation, and overall career guidance.</p>
+                    </details>
+                     <details class="group bg-gray-900 rounded-lg p-6">
+                        <summary class="flex justify-between items-center font-semibold text-white text-lg cursor-pointer">
+                           <span>Do I need to be a technical student?</span>
+                           <svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                        </summary>
+                        <p class="text-gray-300 mt-3">Eligibility is open to students in BTech, MTech, BCA, or MCA programs. We welcome students from any branch/domain within these degrees, as the key is your ability to drive technical community initiatives.</p>
+                    </details>
+                </div>
+                <div class="mt-8 text-center text-sm text-gray-400">
+                    <p>Couldn't find your question? <a href="mailto:campusconnect@algozenit.com" class="text-blue-400 underline hover:text-blue-300">Contact us here</a>.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-brand-black border-t border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-400">
+            <p>&copy; 2025 Algozenith Technologies Private Limited. All Rights Reserved.</p>
+            <p class="mt-2 text-sm">Empowering the next generation of tech leaders.</p>
+        </div>
+    </footer>
+    <div id="infoModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60">
+        <div class="bg-gray-900 w-11/12 md:max-w-2xl mx-auto rounded-lg shadow-lg overflow-hidden modal-enter">
+            <div class="py-4 px-6">
+                <div class="flex justify-between items-center pb-3">
+                    <h3 id="modalTitle" class="text-xl font-bold text-yellow-400">Info</h3>
+                    <button id="closeModalBtn" aria-label="Close modal" class="p-2 rounded-full hover:bg-gray-800">
+                        <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                </div>
+                <div id="modalContent" class="text-gray-300"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function() {
+            // Mobile menu toggle
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+            // Simple nav background on scroll
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) header.classList.add('backdrop-blur-sm');
+                else header.classList.remove('backdrop-blur-sm');
+            });
+
+            // Modal logic
+            const modal = document.getElementById('infoModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+            const rolesBtn = document.getElementById('rolesBtn');
+            const eligibilityBtn = document.getElementById('eligibilityBtn');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const modalData = {
+                roles: {
+  title: 'Roles & Responsibilities',
+  html: `
+    <p class="text-gray-300 mb-4">
+      As a Campus Lead, you’ll take on impactful work that enhances your leadership, organization, and communication skills. Here’s what you’ll do:
+    </p>
+    <ol class="list-decimal list-inside space-y-3 text-gray-300">
+      <li>
+        <span class="font-semibold text-white">Organize Events:</span>
+        Plan and host coding contests, webinars, workshops, and tech meetups — with full guidance and resources from the AlgoZenith team.
+      </li>
+      <li>
+        <span class="font-semibold text-white">Lead the Community:</span>
+        Unite students across departments and batches to build a collaborative, growth-driven learning community.
+      </li>
+      <li>
+        <span class="font-semibold text-white">Collaborate with AZ:</span>
+        Stay in touch with the AlgoZenith team — share updates, ideas, and feedback to shape future initiatives.
+      </li>
+      <li>
+        <span class="font-semibold text-white">Build Your Core Team:</span>
+        Select passionate peers to help you plan, promote, and execute events effectively.
+      </li>
+      <li>
+        <span class="font-semibold text-white">Drive Engagement:</span>
+        Promote AlgoZenith programs, events, and opportunities through campus channels and social media.
+      </li>
+      <li>
+        <span class="font-semibold text-white">Uphold the Culture:</span>
+        Represent AlgoZenith with integrity, creativity, and inclusivity — fostering a positive and inspiring environment on campus.
+      </li>
+    </ol>
+  `
+},
+                eligibility: {
+  title: 'Eligibility Criteria',
+  html: `
+    <ul class="list-disc list-inside space-y-2 text-gray-300">
+      <li>Applicants must be enrolled in a recognized institution in India, pursuing BTech, MTech, BCA, or MCA programs.</li>
+      <li>Students enrolled in integrated programs (BTech+MTech, BCA+MCA) are also eligible.</li>
+      <li>First-year students are not eligible to apply.</li>
+      <li>Final-year students are not eligible to apply.</li>
+    </ul>
+  `
+},
+            };
+            function openModal(type) {
+                modalTitle.textContent = modalData[type].title;
+                modalContent.innerHTML = modalData[type].html;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+            function closeModal() {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+            rolesBtn?.addEventListener('click', () => openModal('roles'));
+            eligibilityBtn?.addEventListener('click', () => openModal('eligibility'));
+            closeModalBtn?.addEventListener('click', closeModal);
+            modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+            // Sneak Peek scroll buttons logic
+            const scrollContainer = document.getElementById('peek-scroll');
+            const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+            const scrollRightBtn = document.getElementById('scrollRightBtn');
+            if (scrollContainer) {
+                scrollLeftBtn?.addEventListener('click', () => {
+                    const scrollAmount = scrollContainer.clientWidth * 0.8; // Scroll by 80% of the container width
+                    scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+                scrollRightBtn?.addEventListener('click', () => {
+                    const scrollAmount = scrollContainer.clientWidth * 0.8;
+                    scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            }
+
+            // Testimonials scroll buttons logic
+            const testimonialScrollContainer = document.getElementById('testimonial-scroll');
+            const testimonialScrollLeftBtn = document.getElementById('testimonialScrollLeftBtn');
+            const testimonialScrollRightBtn = document.getElementById('testimonialScrollRightBtn');
+            if (testimonialScrollContainer) {
+                testimonialScrollLeftBtn?.addEventListener('click', () => {
+                    const scrollAmount = testimonialScrollContainer.clientWidth * 0.9;
+                    testimonialScrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+                testimonialScrollRightBtn?.addEventListener('click', () => {
+                    const scrollAmount = testimonialScrollContainer.clientWidth * 0.9;
+                    testimonialScrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
